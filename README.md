@@ -1,24 +1,13 @@
+# Variable Power Supply Online Purchase
 
-# Variable Power Supply SEO Hub
+This project is deployed on **customampscreens.com**.
 
-This repository is a topic-focused content hub for **variable power supply** and **variable dc power supply**.
+The core topic is **variable power supply**, with related coverage for **variable dc power supply** categories, technical use cases, and model-specific pages.
 
-It helps reinforce topical relevance for the main site: [customampscreens.com](https://customampscreens.com/).
+For broader reference :
 
-## Topic Focus
-
-- Core keyword: `variable power supply`
-- Primary related keyword: `variable dc power supply`
-- Supporting topics: programmable, high-voltage, linear, benchtop, and rack-mount power supply systems
-
-## Relevance Alignment
-
-The pages in this project follow a consistent taxonomy and technical vocabulary aligned with [customampscreens.com](https://customampscreens.com/), making it easier for search engines to understand:
-
-- subject consistency across related pages
-- clear keyword-to-topic mapping
-- stable entity relevance in the variable power supply domain
-
-## Sitemap
-
-- [https://customampscreens.com/sitemap.xml](https://customampscreens.com/sitemap.xml)
+- [https://variabledcpowersupply.com/](https://variabledcpowersupply.com/)
+- [https://variabledcpowersupply.com/800v-dc-power-supplies/](https://variabledcpowersupply.com/800v-dc-power-supplies/)
+- [https://variabledcpowersupply.com/programmable-dc-power-supply/](https://variabledcpowersupply.com/programmable-dc-power-supply/)
+- [https://variabledcpowersupply.com/high-voltage-dc-power-supply/](https://variabledcpowersupply.com/high-voltage-dc-power-supply/)
+- [https://variabledcpowersupply.com/linear-dc-power-supplies/](https://variabledcpowersupply.com/linear-dc-power-supplies/)
