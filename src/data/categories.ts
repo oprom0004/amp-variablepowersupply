@@ -7,15 +7,15 @@ import { CategoryData } from '../types';
 
 export const CATEGORIES: CategoryData[] = [
   {
-    slug: 'variable-power-supply',
-    name: 'Variable Power Supply',
+    slug: 'variable-dc-power-supply',
+    name: 'Variable DC Power Supply',
     url: 'https://variabledcpowersupply.com/',
-    description: 'High-precision variable DC power supply units with adjustable voltage and current regulation for mission-critical laboratory testing.',
-    techSummary: 'The AMPSCREENS Variable DC power supply series integrates switching efficiency with linear-grade output stability. Designed for semiconductor validation where low ripple/noise and rapid transient response are essential benchmarks.',
+    description: 'High-precision variable DC power supply systems with adjustable voltage and current regulation for mission-critical laboratory testing.',
+    techSummary: 'This variable DC power supply series integrates switching efficiency with linear-grade output stability. Designed for semiconductor validation where low ripple/noise and rapid transient response are essential benchmarks.',
     safetyLogic: 'Redundant Over-Voltage Protection (OVP) and CV/CC auto-crossover logic ensuring safe operation during dynamic load variations.',
     useCases: ['Semiconductor Reliability Testing', 'DC Motor Characterization', 'Advanced R&D Fabrication'],
     protocols: ['SCPI commands', 'Analog Programming', 'Local Interface'],
-    engineeringInsights: `The technology behind a modern variable power supply involves a sophisticated balance of power density and signal integrity. Our core series utilizing 'Switching-Linear Hybrid' regulation delivers the rapid transient response associated with linear supplies while maintaining the high efficiency of a switching DC source. 
+    engineeringInsights: `The technology behind a modern variable DC power supply involves a sophisticated balance of power density and signal integrity. Our core series utilizing 'Switching-Linear Hybrid' regulation delivers the rapid transient response associated with linear supplies while maintaining the high efficiency of a switching DC source. 
 
     From a technical perspective, a high-quality variable power source must manage the 'Total Harmonic Distortion' (THD) on its output rails. By integrating active EMI shielding and multi-stage output inductor filters, we ensure that the DC output remains a clean reference for sensitive ADC characterization and high-speed communication testing.`,
     applicationBrief: `A variable DC power supply is the central nerve center of any professional engineering lab. Whether you are validating a new IoT chipset or simulating a 12V automotive battery profile, the ability to precisely adjust voltage and current limits is what prevents expensive prototype failures. Our universal variable sources are currently deployed in thousands of centers globally, from Silicon Valley R&D firms to industrial automation floors.`,
@@ -314,7 +314,7 @@ export const CATEGORIES: CategoryData[] = [
     slug: '10a-variable-power-supply',
     name: '10A Variable Power Supply',
     url: 'https://variabledcpowersupply.com/10a-dc-power-supplies/',
-    description: 'High-current variable supplies capable of delivering up to 10 Amps.',
+    description: 'High-current variable DC power supplies capable of delivering up to 10 Amps for lab validation and engineering development.',
     techSummary: 'Designed for high dynamic current loads. Features large-scale heat dissipation and heavy-duty output terminals.',
     safetyLogic: 'Fold-back current limiting or Constant-Current modes with thermal protection interlocks.',
     useCases: ['Inductive Load Testing', 'DC Heater Powering', 'High-Power Transmitter Support'],
@@ -342,6 +342,44 @@ export const CATEGORIES: CategoryData[] = [
         a: "To minimize voltage drop and fire risk, we recommend $12 AWG or thicker high-flex silicone wire. Using our remote sense terminals ensures the set voltage is maintained exactly at the load, compensating for wire resistance."
       }
     ],
+  },
+  {
+    slug: '30a-variable-power-supply',
+    name: '30A Variable Power Supply',
+    url: 'https://variabledcpowersupply.com/variable-dc-power-supply-30a/',
+    description: 'Industrial 30A variable DC power supplies for high-current development, validation, and burn-in tasks.',
+    techSummary: 'High-current regulation architecture with fast transient response and stable CV/CC crossover under dynamic loads.',
+    safetyLogic: 'Hardware OCP/OVP with thermal derating logic to protect both DUT and power stage during sustained 30A operation.',
+    useCases: ['Battery Pack Development', 'Power Electronics Validation', 'Automated Burn-in Racks'],
+    protocols: ['RS485', 'LAN (Selected)', 'Analog Programming'],
+    engineeringInsights: `A 30A variable power supply must manage conductor losses, thermal rise, and transient current spikes with precision. Our 30A class uses low-impedance bus architecture and high-efficiency switching stages to maintain output stability during rapid load variation.
+
+    For production and lab validation workflows, the control loop is tuned to reduce overshoot when stepping from light to heavy current regions. This improves repeatability in long-duration reliability testing and high-current converter characterization.`,
+    applicationBrief: `The 30A variable DC platform is commonly used in EV sub-system testing, telecom power module qualification, and industrial controller burn-in. It provides the current headroom needed for realistic stress scenarios while preserving repeatable regulation accuracy.`,
+    physicalSpecs: {
+      cooling: 'High-Flow Smart Fan Control',
+      interface: 'Reinforced High-Current Terminals',
+      formFactor: 'Benchtop / Rack Hybrid'
+    },
+  },
+  {
+    slug: '60a-variable-power-supply',
+    name: '60A Variable Power Supply',
+    url: 'https://variabledcpowersupply.com/60a-dc-power-supplies/',
+    description: 'Heavy-duty 60A variable power systems for extreme current demand in industrial and laboratory environments.',
+    techSummary: 'Engineered for sustained high-current delivery with robust thermal design and low ripple regulation at load.',
+    safetyLogic: 'Multi-stage protection with hardware OCP, short-circuit foldback, and temperature-triggered output control.',
+    useCases: ['High-Power Motor Testing', 'Electrochemical Process Development', 'Large-System Burn-in'],
+    protocols: ['CAN (Optional)', 'RS485', 'Remote Sense'],
+    engineeringInsights: `At 60A output levels, cable resistance and connector integrity become dominant error sources. Our 60A variable platform prioritizes low-loss current paths, reinforced output terminals, and remote-sense compensation to keep voltage regulation accurate at the DUT.
+
+    Thermal reliability is handled through multi-zone airflow and conservative derating behavior, allowing stable continuous operation in high-duty industrial scenarios where long test cycles are required.`,
+    applicationBrief: `The 60A variable power category is used for high-current subsystem validation, heavy-load endurance testing, and advanced industrial prototyping where standard bench supplies cannot provide adequate current margin.`,
+    physicalSpecs: {
+      cooling: 'Multi-Zone Forced Air Cooling',
+      interface: 'Heavy-Duty Bus-Bar / Terminal Output',
+      formFactor: 'Industrial Rack Chassis'
+    },
   },
   {
     slug: '1000w-variable-power-supply',
@@ -460,7 +498,7 @@ export const CATEGORIES: CategoryData[] = [
     slug: 'triple-output-variable-power-supply',
     name: 'Triple Output Variable Power Supply',
     url: 'https://variabledcpowersupply.com/triple-output-bench-power-supplies/',
-    description: 'Triple isolated outputs for maximum bench versatility.',
+    description: 'Triple isolated output variable DC power supplies for mixed-signal benches requiring flexible multi-rail testing and stable regulation.',
     techSummary: 'Individual control for each channel. Supports series or parallel linking of channels for higher voltage or current output on demand.',
     safetyLogic: 'Channel-to-channel isolation >300V. Independent OVP/OCP for each output rail.',
     useCases: ['Digital/Analog Mixed Circuit Development', 'Educational Labs', 'Multi-Rail System Powering'],

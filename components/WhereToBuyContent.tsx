@@ -1,17 +1,14 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+ï»¿"use client";
+
+import Link from 'next/link';
 import { Globe, Truck, ShieldCheck, FileText, Landmark, PackageCheck, Headphones, HelpCircle } from 'lucide-react';
 
-export default function WhereToBuy() {
-  const currentYear = new Date().getFullYear();
-  useEffect(() => {
-    document.title = "Variable Power Supply Procurement | Global Network & Logistics";
-  }, []);
+export default function WhereToBuyContent() {  const currentYear = new Date().getFullYear();
   return (
     <div className="min-h-screen bg-[#F9F9F8] pt-32 pb-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <nav className="flex items-center space-x-2 font-sans text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-          <Link to="/" className="text-gray-400 hover:text-[#C53030] transition-colors">Home</Link>
+          <Link href="/" className="text-gray-400 hover:text-[#C53030] transition-colors">Home</Link>
           <span className="text-gray-300">/</span>
           <span className="text-[#1A1A1A]">Where_To_Buy</span>
         </nav>
@@ -137,7 +134,7 @@ export default function WhereToBuy() {
                   rel="noopener noreferrer"
                   className="font-mono text-xs font-black tracking-tighter pt-4 border-t border-white/20 hover:text-[#C53030] transition-colors"
                 >
-                   GLOBAL_SHIPPING_QUERY â†?
+                   GLOBAL_SHIPPING_QUERY
                 </a>
              </div>
           </div>
@@ -146,4 +143,6 @@ export default function WhereToBuy() {
     </div>
   );
 }
+
+
 

@@ -1,20 +1,19 @@
+﻿"use client";
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { CATEGORIES } from '../data/categories';
+import Link from 'next/link';
+import { CATEGORIES } from '@/src/data/categories';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { getCategoryCardImage, getHomepageHeroImage } from '@/lib/category-images';
 
-export default function Home() {
-  useEffect(() => {
-    document.title = "Variable Power Supply | High-Precision Programmable Engineering Sources";
-  }, []);
+export default function HomeContent() {  const featured = CATEGORIES;
   const currentYear = new Date().getFullYear();
-  const featured = CATEGORIES;
+  const heroImage = getHomepageHeroImage();
 
   return (
     <div className="bg-[#F9F9F8] min-h-screen text-[#1A1A1A]">
@@ -76,13 +75,12 @@ export default function Home() {
                <motion.div 
                  initial={{ opacity: 0, scale: 0.98 }}
                  animate={{ opacity: 1, scale: 1 }}
-                 className="relative z-10 w-full aspect-video grayscale hover:grayscale-0 transition-all duration-1000"
+                 className="relative z-10 w-full aspect-video transition-all duration-1000"
                >
-                 <img 
-                   src="https://picsum.photos/seed/industrial/1200/675" 
+                 <img
+                   src={heroImage}
                    alt="Main Industrial SKU"
-                   referrerPolicy="no-referrer"
-                   className="w-full h-full object-cover"
+                   className="w-full h-full object-contain border border-[#1A1A1A] bg-white p-2"
                  />
                  
                  <div className="absolute top-4 right-4 bg-white/90 p-3 border border-[#1A1A1A] font-mono text-[8px] uppercase tracking-tighter">
@@ -109,9 +107,21 @@ export default function Home() {
           {featured.map((cat, idx) => (
             <Link 
               key={cat.slug} 
-              to={`/${cat.slug}`}
-              className="group border-r-[0.5px] border-b-[0.5px] border-[#1A1A1A] p-12 hover:bg-[#F9F9F8] transition-all flex flex-col justify-between aspect-square relative"
+              href={`/${cat.slug}`}
+              className={`group border-r-[0.5px] border-b-[0.5px] border-[#1A1A1A] hover:bg-[#F9F9F8] transition-all flex flex-col justify-between relative overflow-hidden ${
+                idx < 8 ? 'min-h-[430px]' : 'aspect-square'
+              }`}
             >
+              {idx < 8 && (
+                <div className="relative h-28 border-b border-[#1A1A1A] bg-white">
+                  <img
+                    src={getCategoryCardImage(cat.slug, idx)}
+                    alt={`${cat.name} SKU image`}
+                    className="w-full h-full object-contain p-1"
+                  />
+                </div>
+              )}
+              <div className={`${idx < 8 ? 'p-8' : 'p-12'} flex flex-col justify-between flex-1`}>
               <div className="relative z-10">
                 <div className="font-sans text-[11px] font-black text-[#C53030] mb-8">
                   NO. {String(idx + 1).padStart(2, '0')}
@@ -119,7 +129,7 @@ export default function Home() {
                 <h4 className="font-sans text-2xl font-black uppercase tracking-tighter leading-none mb-4 group-hover:translate-x-1 transition-transform">
                   {cat.name}
                 </h4>
-                <p className="font-sans text-[9px] font-bold uppercase tracking-[0.2em] leading-relaxed opacity-40">
+                <p className="font-sans text-[9px] font-bold uppercase tracking-[0.2em] leading-relaxed opacity-40 max-h-[6.6em] overflow-hidden">
                   {cat.description}
                 </p>
               </div>
@@ -128,6 +138,7 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5 group-hover:text-white" />
                 </div>
                 <div className="font-mono text-[8px] text-gray-400 group-hover:text-[#1A1A1A] uppercase tracking-widest">DS_SHEET_REF</div>
+              </div>
               </div>
             </Link>
           ))}
@@ -159,7 +170,7 @@ export default function Home() {
                 { 
                   title: 'Transient Response', 
                   kw: 'Adjustable DC Source Specs', 
-                  desc: 'Sub-50μs recovery times for high-frequency switching environments. Essential for testing sensitive micro-controllers and high-speed CMOS circuits.'
+                  desc: 'Sub-50渭s recovery times for high-frequency switching environments. Essential for testing sensitive micro-controllers and high-speed CMOS circuits.'
                 },
                 { 
                   title: 'Ripple & Noise Ratio', 
@@ -232,7 +243,7 @@ export default function Home() {
                  </div>
                  <div>
                    <div className="font-sans text-[10px] font-black uppercase tracking-widest mb-2">Transient Recovery</div>
-                   <p className="font-sans text-[9px] font-bold text-gray-400 uppercase tracking-tight italic">&lt; 50μs Response Time</p>
+                   <p className="font-sans text-[9px] font-bold text-gray-400 uppercase tracking-tight italic">&lt; 50渭s Response Time</p>
                  </div>
               </div>
               <button className="self-start text-[11px] font-black underline uppercase tracking-[0.4em] hover:text-[#C53030] transition-colors">
@@ -244,3 +255,7 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+

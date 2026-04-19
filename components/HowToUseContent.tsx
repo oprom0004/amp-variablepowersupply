@@ -1,25 +1,22 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+﻿"use client";
+
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ShieldCheck, Zap, Power, HelpCircle, BookOpen, Terminal, Activity } from 'lucide-react';
 
-export default function HowToUse() {
-  const currentYear = new Date().getFullYear();
-  useEffect(() => {
-    document.title = "Variable Power Supply Technical Support | How to Use & Operate";
-  }, []);
-  const categories = [
+export default function HowToUseContent() {  const categories = [
     { title: 'Fundamental Operations', anchor: 'fundamentals' },
     { title: 'CV/CC Mode Logic', anchor: 'mode-logic' },
     { title: 'SCPI Automation', anchor: 'automation' },
     { title: 'Safety & Recalibration', anchor: 'safety' }
   ];
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-[#F9F9F8] pt-32 pb-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <nav className="flex items-center space-x-2 font-sans text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-          <Link to="/" className="text-gray-400 hover:text-[#C53030] transition-colors">Home</Link>
+          <Link href="/" className="text-gray-400 hover:text-[#C53030] transition-colors">Home</Link>
           <span className="text-gray-300">/</span>
           <span className="text-[#1A1A1A]">How_To_Use</span>
         </nav>
@@ -48,7 +45,7 @@ export default function HowToUse() {
                  <h2 className="font-sans text-2xl font-black uppercase tracking-tighter italic">Basic Commissioning: Power-Up Protocol</h2>
               </div>
               <p className="font-sans text-xs font-bold leading-relaxed text-[#1A1A1A] uppercase tracking-tight opacity-50 border-l-2 border-gray-100 pl-8">
-                The initial setup of a high-performance variable power supply (可变电源) begins with grounding integrity. Before applying input AC, ensure the chassis ground is connected to a low-impedance earth loop. This prevents common-mode noise and ensures operator safety in high-voltage 800V environments.
+                The initial setup of a high-performance variable power supply (鍙彉鐢垫簮) begins with grounding integrity. Before applying input AC, ensure the chassis ground is connected to a low-impedance earth loop. This prevents common-mode noise and ensures operator safety in high-voltage 800V environments.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                  <div className="p-8 border border-[#1A1A1A] bg-white space-y-4">
@@ -162,4 +159,7 @@ inst.write('OUTP ON') # Enable Output`}
     </div>
   );
 }
+
+
+
 
