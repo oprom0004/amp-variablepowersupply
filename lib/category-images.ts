@@ -1,13 +1,13 @@
 const IMAGE_FILES = {
-  hero: "/800v-etm-8006.png",
-  hv800: "/800v-etm-8006.png",
-  programmable: "/programmable-variable-dc-power-supply-etm-5050c.png",
-  triple: "/triple-output-dc-power-supply-etm-dm-kkk.png",
-  precision: "/etm-k8011spl-high-precision-variable-dc-power-supply.png",
-  linear: "/high-precision-linear-variable-dc-power-supply-etmi301spv.png",
-  linearAlt: "/high-precision-linear-variable-dc-power-supply-etmi301spv-2.png",
-  tenAmp: "/10a-variable-dc-power-supply-etm-50010.png",
-  rack: "/etm-3050u.png",
+  hero: "/800v-etm-8006.webp",
+  hv800: "/800v-etm-8006.webp",
+  programmable: "/programmable-variable-dc-power-supply-etm-5050c.webp",
+  triple: "/triple-output-dc-power-supply-etm-dm-kkk.webp",
+  precision: "/etm-k8011spl-high-precision-variable-dc-power-supply.webp",
+  linear: "/high-precision-linear-variable-dc-power-supply-etmi301spv.webp",
+  linearAlt: "/high-precision-linear-variable-dc-power-supply-etmi301spv-2.webp",
+  tenAmp: "/10a-variable-dc-power-supply-etm-50010.webp",
+  rack: "/etm-3050u.webp",
 } as const;
 
 const CARD_IMAGE_POOL = [
