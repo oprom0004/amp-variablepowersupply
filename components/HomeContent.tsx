@@ -1,13 +1,10 @@
-﻿"use client";
-
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import Link from 'next/link';
 import { CATEGORIES } from '@/src/data/categories';
-import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { getCategoryCardImage, getHomepageHeroImage } from '@/lib/category-images';
 
@@ -35,15 +32,12 @@ export default function HomeContent() {  const featured = CATEGORIES;
               </p>
               
                 <div className="flex flex-col space-y-4">
-                  <button 
-                    onClick={() => {
-                      const el = document.getElementById('catalog');
-                      el?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                  <a
+                    href="#catalog"
                     className="bg-[#1A1A1A] text-white px-12 py-6 font-sans text-xs font-black uppercase tracking-[0.3em] hover:bg-[#C53030] shadow-sm transition-all w-full md:w-auto text-center rounded-[2px]"
                   >
                     View Technical Catalog
-                  </button>
+                  </a>
                   <a 
                     href="https://variabledcpowersupply.com/"
                     target="_blank"
@@ -72,14 +66,15 @@ export default function HomeContent() {  const featured = CATEGORIES;
                     style={{backgroundImage: 'linear-gradient(#1A1A1A 1px, transparent 1px), linear-gradient(90deg, #1A1A1A 1px, transparent 1px)', backgroundSize: '40px 40px'}}>
                </div>
                
-               <motion.div 
-                 initial={{ opacity: 0, scale: 0.98 }}
-                 animate={{ opacity: 1, scale: 1 }}
-                 className="relative z-10 w-full aspect-video transition-all duration-1000"
-               >
+               <div className="relative z-10 w-full aspect-video transition-all duration-1000">
                  <img
                    src={heroImage}
                    alt="Main Industrial SKU"
+                   width={1280}
+                   height={720}
+                   fetchPriority="high"
+                   loading="eager"
+                   decoding="async"
                    className="w-full h-full object-contain border border-[#1A1A1A] bg-white p-2"
                  />
                  
@@ -87,7 +82,7 @@ export default function HomeContent() {  const featured = CATEGORIES;
                     V_SET: 800.00V <br />
                     I_REG: 10.000A
                  </div>
-               </motion.div>
+               </div>
             </div>
 
             <div className="px-10 py-8 border-t border-[#1A1A1A] flex justify-between items-center bg-white">
@@ -117,6 +112,8 @@ export default function HomeContent() {  const featured = CATEGORIES;
                   <img
                     src={getCategoryCardImage(cat.slug, idx)}
                     alt={`${cat.name} SKU image`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain p-1"
                   />
                 </div>
@@ -255,6 +252,8 @@ export default function HomeContent() {  const featured = CATEGORIES;
     </div>
   );
 }
+
+
 
 
 
